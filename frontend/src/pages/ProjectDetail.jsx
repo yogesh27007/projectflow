@@ -1,10 +1,11 @@
+import { useAuth } from '../context/AuthContext';
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 import { Plus, ArrowLeft, Clock, DollarSign, Users, Calendar, TrendingUp, AlertCircle } from 'lucide-react';
 
 const API = 'http://localhost:5000/api';
-const authHeaders = () => ({ headers: { Authorization: `Bearer $localStorage.getItem('pf_token')}` } });
+const authHeaders = () => ({ headers: { Authorization: `Bearer ${localStorage.getItem('pf_token')}` } });
 const COLS = [
   { id: 'todo', label: 'To Do', color: '#6366f1' },
   { id: 'in-progress', label: 'In Progress', color: '#f59e0b' },
